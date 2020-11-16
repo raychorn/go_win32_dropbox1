@@ -1,5 +1,9 @@
 # Dropbox sometimes likes to fail then it wants to be restarted.  This little program should resolve this issue.
 
+This requirement was resolved using AutoHotKey because it can produce Windows Native Executables and it was easy enough
+to resolve it that way.
+
+GO is a very low-level programming language that does not have good integration with Win32, at this time. (11-16-2020).
 ## Table of Contents
 
 - [About](#about)
