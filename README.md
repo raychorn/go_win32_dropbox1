@@ -17,10 +17,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+[Win32 for GO](https://github.com/AllenDang/w32)
 
 ```
-Give examples
+go get github.com/AllenDang/w32
+
+go install github.com/AllenDang/w32
 ```
 
 ### Installing
