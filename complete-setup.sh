@@ -20,24 +20,27 @@ else
 fi
  
 golang=$(whereis go)
-echo $golang
-
-re='^1$'
+#echo $golang
 
 tok_count=0
 go_path=""
 IFS=': '
 read -ra ADDR <<< "$golang"
 for i in "${ADDR[@]}"; do
-    echo "$tok_count :: $i"
+    #echo "$tok_count :: $i"
     if (( tok_count==1 )) ; then
-        go_path="$i"
+        go_path="$i/bin/go"
     fi
     ((tok_count=tok_count+1))
 done
 echo go_path=$go_path
-if [ -d "$go_path" ]; then
+if [ -f "$go_path" ]; then
     echo "$go_path exists."
-else
-    echo "$go_path does not exists."
+    if [ -f "/usr/bin/go" ]; then
+        echo "/usr/bin/go exists."
+    else
+        ln -s "$go_path" /usr/bin/go
+    fi
+#else
+    #echo "$go_path does not exists."
 fi
